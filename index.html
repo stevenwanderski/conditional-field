@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Conditional Fields</title>
+  <link rel="stylesheet" href="">
+</head>
+<body>
+
+  <h1>Conditional Field</h1>
+  <p>[Funky description here]</p>
+
+  <form action="">
+    <div class="test-select">
+      <h2>Select</h2>
+      <select class="select-field">
+        <option value="mothers">Mothers of Invention</option>
+        <option value="spiders">Spiders from Mars</option>
+      </select>
+
+      <div class="zappa">Frank Zappa</div>
+      <div class="bowie">David Bowie</div>
+    </div>
+
+    <div class="test-radio">
+      <h2>Radio Button</h2>
+      <label>
+        <input type="radio" name="artists" value="mothers" checked> Mothers of Invention
+      </label>
+      <label>
+        <input type="radio" name="artists" value="spiders"> Spiders from Mars
+      </label>
+
+      <div class="zappa">Frank Zappa</div>
+      <div class="bowie">David Bowie</div>
+    </div>
+
+    <div class="test-checkbox">
+      <h2>Checkbox</h2>
+      <label>
+        <input type="checkbox"> Show the Spiders
+      </label>
+
+      <div class="zappa">Frank Zappa</div>
+      <div class="bowie">David Bowie</div>
+    </div>
+  </form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="/dist/conditional-field.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
