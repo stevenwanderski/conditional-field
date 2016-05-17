@@ -1,13 +1,23 @@
 {
   "name": "conditional-field",
-  "version": "1.0.0",
   "description": "Shows / hides DOM elements based on form values",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Steven Wanderski",
+  "authors": [
+    "Steven Wanderski"
+  ],
   "license": "ISC",
+  "homepage": "https://github.com/stevenwanderski/conditional-field",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.6.0",
     "gulp": "^3.9.1",
@@ -16,8 +26,5 @@
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.3",
     "mocha": "^2.4.5"
-  },
-  "dependencies": {
-    "jquery": "^2.2.3"
   }
 }
