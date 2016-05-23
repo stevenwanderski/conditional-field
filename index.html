@@ -3,52 +3,337 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Conditional Fields</title>
-  <link rel="stylesheet" href="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conditional Field</title>
+
+  <link href="/docs/vendor/prism/prism.css" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,500,600,700,800,900,200,100|Rubik:400,300,500,700|Hind+Vadodara:400,300' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Anonymous+Pro:400,700|PT+Mono|Roboto+Mono:400,100,300,500,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/docs/app.css">
 </head>
 <body>
+  <header>
+    <div class="container">
+      <h1>Conditional Field</h1>
+      <p>Javascript component that shows and hides page elements based on form field values</p>
+    </div>
+  </header>
 
-  <h1>Conditional Field</h1>
-  <p>[Funky description here]</p>
+  <div class="container">
+    <div class="section">
+      <h2>Installation</h2>
+      <p>This plugin requires <strong>jQuery</strong>. In the HTML page, first include jQuery, then <strong>Conditional Field</strong>. Be sure to place the script tags just before the closing body tag.</p>
+      <p>Example:</p>
 
-  <form action="">
-    <div class="test-select">
-      <h2>Select</h2>
-      <select class="select-field">
-        <option value="mothers">Mothers of Invention</option>
-        <option value="spiders">Spiders from Mars</option>
-      </select>
+      <div class="code">
+        <div class="code--header">
+          HTML
+        </div>
 
-      <div class="zappa">Frank Zappa</div>
-      <div class="bowie">David Bowie</div>
+        <div class="code--body">
+          <pre class="language-markup"><code>
+            <xmp>
+            <!DOCTYPE html>
+            <html>
+            <head>
+              ...
+            </head>
+            <body>
+              ...
+              <script src="/path/to/jquery.js"></script>
+              <script src="/path/to/conditional-field.js"></script>
+            </body>
+            </html>
+            </xmp>
+          </code></pre>
+        </div>
+      </div>
+
+      <p>The script tags can also be placed in the <strong>head</strong> tag. If doing so, all calls to <strong>Conditional Field</strong> must be wrapped in a <code class="language-javascript">$(document).ready()</code> block.</p>
+      <p>Example:</p>
+
+      <div class="code">
+        <div class="code--header">
+          Javascript
+        </div>
+
+        <div class="code--body">
+          <pre class="language-javascript"><code>
+            $(document).ready(function(){
+
+              new ConditionalField({
+                ...
+              });
+
+            });
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="section">
+        <h3>Using Bower</h3>
+        <p class="language-markup">Run <code>bower install --save conditional-field</code>, then reference the files in the HTML page.</p>
+      </div>
+
+      <div class="section">
+        <h3>Using NPM</h3>
+        <p class="language-markup">Run <code>npm install --save conditional-field</code>, then reference the files in the HTML page.</p>
+      </div>
+
+      <div class="section">
+        <h3>Manual download</h3>
+        <p>Download <a href="">conditional-field.min.js</a> and place it in your project directory. Then reference the files in the HTML page.</p>
+      </div>
     </div>
 
-    <div class="test-radio">
-      <h2>Radio Button</h2>
-      <label>
-        <input type="radio" name="artists" value="mothers" checked> Mothers of Invention
-      </label>
-      <label>
-        <input type="radio" name="artists" value="spiders"> Spiders from Mars
-      </label>
+    <h2>Examples</h2>
 
-      <div class="zappa">Frank Zappa</div>
-      <div class="bowie">David Bowie</div>
+    <div class="sample sample--select section">
+      <h3>Select</h3>
+      <div class="code">
+        <div class="code--header">
+          Example
+        </div>
+
+        <div class="code--body">
+          <div class="form-item">
+            <label>Select Payment Method:</label>
+            <select class="select-field">
+              <option value="credit">Credit Card</option>
+              <option value="check">Check</option>
+            </select>
+          </div>
+
+          <div class="credit">
+            <div class="form-item">
+              <label>Card Number:</label>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div class="check">
+            <label>Check number:</label>
+            <input type="text" name="check_number" />
+          </div>
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="code--header">
+          HTML
+        </div>
+
+        <div class="code--body">
+          <pre class="language-markup"><code>
+            <xmp>
+
+              <label>Payment Method:</label>
+              <select class="select-field">
+                <option value="credit">Credit Card</option>
+                <option value="check">Check</option>
+              </select>
+
+              <div class="credit">
+                <label>Card Number:</label>
+                <input type="text" />
+              </div>
+
+              <div class="check">
+                <label>Check number:</label>
+                <input type="text" name="check_number" />
+              </div>
+
+            </xmp>
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="code--header">
+          Javascript
+        </div>
+
+        <div class="code--body">
+          <pre><code class="language-javascript">
+            new ConditionalField({
+              control: '.select-field',
+              visibility: {
+                'credit': '.credit',
+                'check': '.check'
+              }
+            });
+          </code></pre>
+        </div>
+      </div>
     </div>
 
-    <div class="test-checkbox">
-      <h2>Checkbox</h2>
-      <label>
-        <input type="checkbox"> Show the Spiders
-      </label>
+    <div class="sample sample--radio section">
+      <h3>Radio Button</h3>
 
-      <div class="zappa">Frank Zappa</div>
-      <div class="bowie">David Bowie</div>
+      <div class="code">
+        <div class="code--header">
+          Example
+        </div>
+
+        <div class="code--body">
+          <div class="form-item">
+            <label>Payment Method:</label>
+            <label class="label-radio">
+              <input type="radio" name="payment" value="credit" class="payment-radios" checked/> Credit Card
+            </label>
+            <label class="label-radio">
+              <input type="radio" name="payment" value="check" class="payment-radios" /> Check
+            </label>
+          </div>
+
+          <div class="section">
+            <div class="credit">
+              <div class="form-item">
+                <label>Card Number:</label>
+                <input type="text" />
+              </div>
+            </div>
+
+            <div class="check">
+              <label>Check number:</label>
+              <input type="text" name="check_number" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="code--header">
+          HTML
+        </div>
+
+        <div class="code--body">
+          <pre class="language-markup"><code>
+            <xmp>
+
+              <label>Payment Method:</label>
+              <label class="label-radio">
+                <input type="radio" name="payment" value="credit" class="payment-radios" checked/> Credit Card
+              </label>
+              <label class="label-radio">
+                <input type="radio" name="payment" value="check" class="payment-radios" /> Check
+              </label>
+
+              <div class="credit">
+                <label>Card Number:</label>
+                <input type="text" />
+              </div>
+
+              <div class="check">
+                <label>Check number:</label>
+                <input type="text" name="check_number" />
+              </div>
+
+            </xmp>
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="code--header">
+          Javascript
+        </div>
+
+        <div class="code--body">
+          <pre><code class="language-javascript">
+            new ConditionalField({
+              control: '.payment-radios',
+              visibility: {
+                'credit': '.credit',
+                'check': '.check'
+              }
+            });
+          </code></pre>
+        </div>
+      </div>
     </div>
-  </form>
 
+    <div class="sample sample--checkbox section">
+      <h3>Checkbox</h3>
+
+      <div class="code">
+        <div class="code--header">
+          Example
+        </div>
+
+        <div class="code--body">
+          <div class="form-item">
+            <label>
+              <input type="checkbox" class="payment-checkbox"> Pay with Check
+            </label>
+          </div>
+
+          <div class="credit">
+            <div class="form-item">
+              <label>Card Number:</label>
+              <input type="text" />
+            </div>
+          </div>
+
+          <div class="check">
+            <label>Check number:</label>
+            <input type="text" name="check_number" />
+          </div>
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="code--header">
+          HTML
+        </div>
+
+        <div class="code--body">
+          <pre class="language-markup"><code>
+            <xmp>
+
+              <label>
+                <input type="checkbox" class="payment-checkbox"> Pay with Check
+              </label>
+
+              <div class="credit">
+                <label>Card Number:</label>
+                <input type="text" />
+              </div>
+
+              <div class="check">
+                <label>Check number:</label>
+                <input type="text" name="check_number" />
+              </div>
+
+            </xmp>
+          </code></pre>
+        </div>
+      </div>
+
+      <div class="code">
+        <div class="code--header">
+          Javascript
+        </div>
+
+        <div class="code--body">
+          <pre><code class="language-javascript">
+            new ConditionalField({
+              control: '.payment-checkbox',
+              visibility: {
+                'off': '.credit',
+                'on': '.check'
+              }
+            });
+          </code></pre>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="/docs/vendor/prism/prism.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <script src="/dist/conditional-field.js"></script>
-  <script src="/app.js"></script>
+  <script src="/docs/app.js"></script>
 </body>
 </html>

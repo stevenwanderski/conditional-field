@@ -1,0 +1,36 @@
+.code {
+  border-radius: $border-radius;
+  border: solid 1px darken($code-header-gray, 5%);
+  margin-bottom: 40px;
+}
+
+.code--header {
+  background: $code-header-gray;
+  padding: 12px;
+  border-radius: $border-radius $border-radius 0 0;
+  border-bottom: solid 1px darken($code-header-gray, 10%);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  color: lighten($body-font-gray, 20%);
+  position: relative;
+  // text-align: right;
+}
+
+// Adds three dots inside the div
+.code--header:before {
+  content: '';
+  background: darken($code-header-gray, 15%);
+  box-shadow: -20px 0 0 darken($code-header-gray, 15%), 20px 0 0 darken($code-header-gray, 15%);
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 14px 30px 0 30px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+
+.code--body {
+  padding: 24px;
+}

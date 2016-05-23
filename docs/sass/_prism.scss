@@ -1,0 +1,21 @@
+:not(pre) > code[class*="language-"] {
+  color: $primary;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.function-name,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: $primary;
+}
+
+pre[class*="language"],
+code[class*="language"] {
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,15 @@
+@import 'variables';
+@import 'base';
+@import 'form';
+@import 'prism';
+@import 'code';
+
+.container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 60px;
+}
