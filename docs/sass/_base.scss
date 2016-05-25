@@ -8,17 +8,21 @@ html,
 body {
   font-family: 'Rubik';
   font-weight: 300;
-  font-size: 16px;
+  font-size: 18px;
   color: $body-font-gray;
 }
 
 a {
   color: $primary;
   font-weight: 400;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 p {
-  font-size: 18px;
   line-height: 28px;
   margin-bottom: 20px;
 
@@ -36,6 +40,10 @@ h1 {
   font-weight: 100;
   margin-bottom: 24px;
   font-family: 'Work Sans';
+
+  @media(max-width: 600px) {
+    font-size: 50px;
+  }
 }
 
 h2 {
@@ -47,28 +55,19 @@ h2 {
   font-family: 'Work Sans';
 }
 
+h2:before {
+  display: block;
+  content: " ";
+  margin-top: -100px;
+  height: 100px;
+  visibility: hidden;
+}
+
 h3 {
   font-weight: 200;
   margin-bottom: 20px;
   font-size: 30px;
   font-family: 'Work Sans';
-}
-
-header {
-  text-align: center;
-  padding: 60px 0;
-  margin-bottom: 60px;
-  background: $primary;
-  color: #fff;
-
-  p {
-    font-size: 24px;
-    line-height: 32px;
-    max-width: 500px;
-    margin: 0 auto;
-    font-weight: 200;
-    color: lighten($primary, 25%);
-  }
 }
 
 [type="text"] {
@@ -78,9 +77,69 @@ header {
   font-family: inherit;
   font-weight: inherit;
   color: inherit;
+  -webkit-appearance: none;
 }
 
 label {
   display: block;
   margin-bottom: 5px;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+  border: solid #f5f5f5 1px;
+}
+
+th {
+  text-align: left;
+  font-weight: 400;
+  border-bottom: solid #eee 1px;
+}
+
+th,
+td {
+  padding: 20px;
+  vertical-align: top;
+}
+
+td {
+  line-height: 24px;
+}
+
+tbody tr:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+@media(max-width: 600px) {
+  thead {
+    display: none;
+  }
+
+  tr {
+    display: block;
+    margin-bottom: 20px;
+    border-bottom: solid 1px $light-gray;
+
+    &:last-child {
+      margin-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  td {
+    display: block;
+
+    pre[class*="language-"],
+    code[class*="language-"] {
+      white-space: pre-wrap;
+    }
+  }
+
+  td:before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
 }

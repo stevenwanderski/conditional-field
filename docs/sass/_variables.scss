@@ -1,4 +1,10 @@
-$primary: #ab3ecd;
-$border-radius: 4px;
+$primary: #9a40c2;
+$primary-light: lighten($primary, 25%);
+$secondary: #efe524;
+$secondary-dark: darken($secondary, 30%);
+
 $body-font-gray: #666;
-$code-header-gray: #eee;
+$light-gray: #eee;
+$white: #fff;
+
+$border-radius: 4px;

@@ -1,0 +1,30 @@
+.nav {
+  padding: 25px 0;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+
+  &.sticky {
+    position: fixed;
+    background: $white;
+    border-bottom: solid 1px $light-gray;
+
+    a {
+      color: $primary;
+    }
+  }
+
+  a {
+    font-size: 18px;
+    color: $primary-light;
+    padding: 0 24px;
+    font-weight: 300;
+
+    @media(max-width: 600px) {
+      padding: 0 10px;
+    }
+  }
+}

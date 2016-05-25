@@ -1,5 +1,9 @@
 @import 'variables';
 @import 'base';
+@import 'button';
+@import 'header';
+@import 'footer';
+@import 'nav';
 @import 'form';
 @import 'prism';
 @import 'code';
@@ -8,6 +12,15 @@
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 40px;
+
+  @media(max-width: 600px) {
+    padding: 0 20px;
+  }
+}
+
+.container__body {
+  padding-bottom: 40px;
 }
 
 .section {

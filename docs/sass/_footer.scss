@@ -1,0 +1,15 @@
+.footer {
+  padding: 40px 0;
+  text-align: center;
+  background: $light-gray;
+  color: lighten($body-font-gray, 20%);
+  font-size: 16px;
+}
+
+.footer--row {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

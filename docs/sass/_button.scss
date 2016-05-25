@@ -1,0 +1,34 @@
+.button {
+  color: $secondary-dark;
+  background: $secondary;
+  padding: 16px;
+  font-size: 20px;
+  border-radius: $border-radius;
+  font-weight: 400;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 200px;
+
+  @media(max-width: 600px) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  &:hover {
+    background: lighten($secondary, 15%);
+    text-decoration: none;
+  }
+
+  img,
+  svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: bottom;
+
+    path,
+    polygon {
+      fill: $secondary-dark;
+    }
+  }
+}

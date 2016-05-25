@@ -12,16 +12,28 @@
   <link rel="stylesheet" href="/docs/app.css">
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="container">
+      <nav class="nav">
+        <a href="#nav-installation">Installation</a>
+        <a href="#nav-examples">Examples</a>
+        <a href="#nav-options">Options</a>
+      </nav>
+
       <h1>Conditional Field</h1>
       <p>Javascript component that shows and hides page elements based on form field values</p>
+      <a href="https://raw.githubusercontent.com/stevenwanderski/conditional-field/master/dist/conditional-field.min.js" class="button">
+        <img src="/docs/svg/cloud-down.svg" class="svg" /> Download
+      </a>
+      <a href="https://github.com/stevenwanderski/conditional-field" class="button">
+        <img src="/docs/svg/github-character.svg" class="svg" /> View on Github
+      </a>
     </div>
   </header>
 
-  <div class="container">
+  <div class="container container__body">
     <div class="section">
-      <h2>Installation</h2>
+      <h2 id="nav-installation">Installation</h2>
       <p>This plugin requires <strong>jQuery</strong>. In the HTML page, first include jQuery, then <strong>Conditional Field</strong>. Be sure to place the script tags just before the closing body tag.</p>
       <p>Example:</p>
 
@@ -86,107 +98,25 @@
       </div>
     </div>
 
-    <h2>Examples</h2>
+    <div class="section">
+      <h2 id="nav-examples">Examples</h2>
 
-    <div class="sample sample--select section">
-      <h3>Select</h3>
-      <div class="code">
-        <div class="code--header">
-          Example
-        </div>
-
-        <div class="code--body">
-          <div class="form-item">
-            <label>Select Payment Method:</label>
-            <select class="select-field">
-              <option value="credit">Credit Card</option>
-              <option value="check">Check</option>
-            </select>
+      <div class="sample sample--select section">
+        <h3>Select</h3>
+        <div class="code">
+          <div class="code--header">
+            Example
           </div>
 
-          <div class="credit">
+          <div class="code--body">
             <div class="form-item">
-              <label>Card Number:</label>
-              <input type="text" />
-            </div>
-          </div>
-
-          <div class="check">
-            <label>Check number:</label>
-            <input type="text" name="check_number" />
-          </div>
-        </div>
-      </div>
-
-      <div class="code">
-        <div class="code--header">
-          HTML
-        </div>
-
-        <div class="code--body">
-          <pre class="language-markup"><code>
-            <xmp>
-
-              <label>Payment Method:</label>
+              <label>Select Payment Method:</label>
               <select class="select-field">
                 <option value="credit">Credit Card</option>
                 <option value="check">Check</option>
               </select>
+            </div>
 
-              <div class="credit">
-                <label>Card Number:</label>
-                <input type="text" />
-              </div>
-
-              <div class="check">
-                <label>Check number:</label>
-                <input type="text" name="check_number" />
-              </div>
-
-            </xmp>
-          </code></pre>
-        </div>
-      </div>
-
-      <div class="code">
-        <div class="code--header">
-          Javascript
-        </div>
-
-        <div class="code--body">
-          <pre><code class="language-javascript">
-            new ConditionalField({
-              control: '.select-field',
-              visibility: {
-                'credit': '.credit',
-                'check': '.check'
-              }
-            });
-          </code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="sample sample--radio section">
-      <h3>Radio Button</h3>
-
-      <div class="code">
-        <div class="code--header">
-          Example
-        </div>
-
-        <div class="code--body">
-          <div class="form-item">
-            <label>Payment Method:</label>
-            <label class="label-radio">
-              <input type="radio" name="payment" value="credit" class="payment-radios" checked/> Credit Card
-            </label>
-            <label class="label-radio">
-              <input type="radio" name="payment" value="check" class="payment-radios" /> Check
-            </label>
-          </div>
-
-          <div class="section">
             <div class="credit">
               <div class="form-item">
                 <label>Card Number:</label>
@@ -200,17 +130,66 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="code">
-        <div class="code--header">
-          HTML
+        <div class="code">
+          <div class="code--header">
+            HTML
+          </div>
+
+          <div class="code--body">
+            <pre class="language-markup"><code>
+              <xmp>
+
+                <label>Payment Method:</label>
+                <select class="select-field">
+                  <option value="credit">Credit Card</option>
+                  <option value="check">Check</option>
+                </select>
+
+                <div class="credit">
+                  <label>Card Number:</label>
+                  <input type="text" />
+                </div>
+
+                <div class="check">
+                  <label>Check number:</label>
+                  <input type="text" name="check_number" />
+                </div>
+
+              </xmp>
+            </code></pre>
+          </div>
         </div>
 
-        <div class="code--body">
-          <pre class="language-markup"><code>
-            <xmp>
+        <div class="code">
+          <div class="code--header">
+            Javascript
+          </div>
 
+          <div class="code--body">
+            <pre><code class="language-javascript">
+              new ConditionalField({
+                control: '.select-field',
+                visibility: {
+                  'credit': '.credit',
+                  'check': '.check'
+                }
+              });
+            </code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="sample sample--radio section">
+        <h3>Radio Button</h3>
+
+        <div class="code">
+          <div class="code--header">
+            Example
+          </div>
+
+          <div class="code--body">
+            <div class="form-item">
               <label>Payment Method:</label>
               <label class="label-radio">
                 <input type="radio" name="payment" value="credit" class="payment-radios" checked/> Credit Card
@@ -218,118 +197,191 @@
               <label class="label-radio">
                 <input type="radio" name="payment" value="check" class="payment-radios" /> Check
               </label>
+            </div>
 
+            <div class="section">
               <div class="credit">
-                <label>Card Number:</label>
-                <input type="text" />
+                <div class="form-item">
+                  <label>Card Number:</label>
+                  <input type="text" />
+                </div>
               </div>
 
               <div class="check">
                 <label>Check number:</label>
                 <input type="text" name="check_number" />
               </div>
-
-            </xmp>
-          </code></pre>
-        </div>
-      </div>
-
-      <div class="code">
-        <div class="code--header">
-          Javascript
-        </div>
-
-        <div class="code--body">
-          <pre><code class="language-javascript">
-            new ConditionalField({
-              control: '.payment-radios',
-              visibility: {
-                'credit': '.credit',
-                'check': '.check'
-              }
-            });
-          </code></pre>
-        </div>
-      </div>
-    </div>
-
-    <div class="sample sample--checkbox section">
-      <h3>Checkbox</h3>
-
-      <div class="code">
-        <div class="code--header">
-          Example
-        </div>
-
-        <div class="code--body">
-          <div class="form-item">
-            <label>
-              <input type="checkbox" class="payment-checkbox"> Pay with Check
-            </label>
-          </div>
-
-          <div class="credit">
-            <div class="form-item">
-              <label>Card Number:</label>
-              <input type="text" />
             </div>
           </div>
+        </div>
 
-          <div class="check">
-            <label>Check number:</label>
-            <input type="text" name="check_number" />
+        <div class="code">
+          <div class="code--header">
+            HTML
+          </div>
+
+          <div class="code--body">
+            <pre class="language-markup"><code>
+              <xmp>
+
+                <label>Payment Method:</label>
+                <label class="label-radio">
+                  <input type="radio" name="payment" value="credit" class="payment-radios" checked/> Credit Card
+                </label>
+                <label class="label-radio">
+                  <input type="radio" name="payment" value="check" class="payment-radios" /> Check
+                </label>
+
+                <div class="credit">
+                  <label>Card Number:</label>
+                  <input type="text" />
+                </div>
+
+                <div class="check">
+                  <label>Check number:</label>
+                  <input type="text" name="check_number" />
+                </div>
+
+              </xmp>
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="code">
+          <div class="code--header">
+            Javascript
+          </div>
+
+          <div class="code--body">
+            <pre><code class="language-javascript">
+              new ConditionalField({
+                control: '.payment-radios',
+                visibility: {
+                  'credit': '.credit',
+                  'check': '.check'
+                }
+              });
+            </code></pre>
           </div>
         </div>
       </div>
 
-      <div class="code">
-        <div class="code--header">
-          HTML
-        </div>
+      <div class="sample sample--checkbox section">
+        <h3>Checkbox</h3>
 
-        <div class="code--body">
-          <pre class="language-markup"><code>
-            <xmp>
+        <div class="code">
+          <div class="code--header">
+            Example
+          </div>
 
+          <div class="code--body">
+            <div class="form-item">
               <label>
                 <input type="checkbox" class="payment-checkbox"> Pay with Check
               </label>
+            </div>
 
-              <div class="credit">
+            <div class="credit">
+              <div class="form-item">
                 <label>Card Number:</label>
                 <input type="text" />
               </div>
+            </div>
 
-              <div class="check">
-                <label>Check number:</label>
-                <input type="text" name="check_number" />
-              </div>
-
-            </xmp>
-          </code></pre>
-        </div>
-      </div>
-
-      <div class="code">
-        <div class="code--header">
-          Javascript
+            <div class="check">
+              <label>Check number:</label>
+              <input type="text" name="check_number" />
+            </div>
+          </div>
         </div>
 
-        <div class="code--body">
-          <pre><code class="language-javascript">
-            new ConditionalField({
-              control: '.payment-checkbox',
-              visibility: {
-                'off': '.credit',
-                'on': '.check'
-              }
-            });
-          </code></pre>
+        <div class="code">
+          <div class="code--header">
+            HTML
+          </div>
+
+          <div class="code--body">
+            <pre class="language-markup"><code>
+              <xmp>
+
+                <label>
+                  <input type="checkbox" class="payment-checkbox"> Pay with Check
+                </label>
+
+                <div class="credit">
+                  <label>Card Number:</label>
+                  <input type="text" />
+                </div>
+
+                <div class="check">
+                  <label>Check number:</label>
+                  <input type="text" name="check_number" />
+                </div>
+
+              </xmp>
+            </code></pre>
+          </div>
+        </div>
+
+        <div class="code">
+          <div class="code--header">
+            Javascript
+          </div>
+
+          <div class="code--body">
+            <pre><code class="language-javascript">
+              new ConditionalField({
+                control: '.payment-checkbox',
+                visibility: {
+                  'off': '.credit',
+                  'on': '.check'
+                }
+              });
+            </code></pre>
+          </div>
         </div>
       </div>
     </div>
 
+    <div class="section">
+      <h2 id="nav-options">Options</h2>
+
+      <table cellpadding="0" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Name"><code class="language-markup">control</code></td>
+            <td data-label="Type">string (element selector)</td>
+            <td data-label="Description">Form element used to determine visibility of connected elements. The value of this element will be used to find the matching value in the <code class="language-markup">visibility</code> option.</td>
+          </tr>
+          <tr>
+            <td data-label="Name"><code class="language-markup">visibility</code></td>
+            <td data-label="Type">JSON object</td>
+            <td data-label="Description" class="language-markup">
+              <p>The keys provided in this object are used to match the value of the <code>control</code> element. When the <code>control</code> value matches a key, the corresponding element will be shown and all other elements provided in this object will be hidden. The provided object must follow this structure:</p>
+
+              <pre class="language-javascript"><code>
+                {
+                  'control-value': 'element-selector'
+                }
+              </code></pre>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
+
+  <footer class="footer">
+    <div class="footer--row">Designed and coded with ♥</div>
+    <div class="footer--row"><a href="http://stevenwanderski.com" target="_blank">Steven Wanderski</a> • Chicago, IL</div>
+  </footer>
 
   <script src="/docs/vendor/prism/prism.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>

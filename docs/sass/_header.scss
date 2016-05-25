@@ -1,0 +1,32 @@
+.header {
+  text-align: center;
+  padding: 100px 0 60px;
+  margin-bottom: 120px;
+  background: rgba($primary, 0.5);
+  color: #fff;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url('/docs/images/bg.png');
+    z-index: -1;
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 32px;
+    max-width: 500px;
+    margin: 0 auto 30px;
+    font-weight: 200;
+    color: $primary-light;
+
+    @media(max-width: 600px) {
+      font-size: 20px;
+    }
+  }
+}
