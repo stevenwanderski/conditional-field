@@ -1,6 +1,8 @@
 # Conditional Field
 A Javascript component that shows / hides DOM elements based on form values.
 
+Examples and docs: [https://stevenwanderski.github.io/conditional-field](https://stevenwanderski.github.io/conditional-field)
+
 ## Installation
 This plugin requires jQuery. In the HTML page, first include `jQuery`, then `Conditional Field`.
 Be sure to place the `<script>` tags just before the closing `<body>` tag. Examples:
