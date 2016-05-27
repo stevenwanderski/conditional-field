@@ -46,7 +46,7 @@ HTML:
 
 Javascript:
 ```javascript
-var cf = new ConditionalField({
+new ConditionalField({
   control: '.select-field',
   visibility: {
     'mothers': '.zappa',
