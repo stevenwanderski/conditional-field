@@ -1,12 +1,17 @@
 {
   "name": "conditional-field",
-  "description": "Shows / hides DOM elements based on form values",
+  "description": "Javascript component that shows and hides page elements based on form field values",
   "main": "index.js",
   "authors": [
     "Steven Wanderski"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/stevenwanderski/conditional-field",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stevenwanderski/conditional-field"
+  },
+  "homepage": "http://stevenwanderski.github.io/conditional-field",
+  "keywords": ["forms", "form fields", "conditional", "conditional form", "conditional form fields"],
   "moduleType": [],
   "ignore": [
     "**/.*",
